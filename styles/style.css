@@ -355,7 +355,7 @@ body {
     width: 100vw;
   }
   .container .content .form-container {
-    width: 70%;
+    width: 50%;
   }
   .container .content .form-container .form-top .first-row .price-container-desktop .price-desktop {
     font-size: 4.5vh;
