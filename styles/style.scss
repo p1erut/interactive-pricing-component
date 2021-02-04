@@ -1,0 +1,187 @@
+* {
+    // Reset styli
+    margin: 0;
+    padding: 0;
+    border: 0;
+    line-height: 1.4em;
+    vertical-align: baseline;
+    text-decoration: none;
+    outline: 0;
+}
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    @include flex-center;
+    flex-direction: column;
+    font-family: 'Manrope', sans-serif;
+}
+
+.container {
+    position: relative;
+    background: url(../images/bg-pattern.svg) no-repeat hsl(230, 100%, 99%);
+    width: 1440px;
+    min-height: 449px;
+    box-shadow: 0px 0px 45px 2px rgba(0, 0, 0, 0.31);
+
+    .content {
+        @include flex-center;
+        flex-direction: column;
+        color: hsl(225, 20%, 60%);
+        font-weight: 600;
+
+        .header {
+            position: relative;
+            text-align: center;
+            @include flex-center;
+            flex-direction: column;
+            padding: 7vh;
+
+            h1 {
+                z-index: 1;
+                color: #000000;
+            }
+
+            h4 {
+                margin-top: 2px;
+                z-index: 1;
+                font-weight: 300;
+            }
+
+            img {
+                position: absolute;
+            }
+        }
+
+        .form-container {
+            position: relative;
+            width: 50%;
+            border-radius: 10px;
+            margin-bottom: 6vh;
+            box-shadow: 0px 0px 70px -35px rgba(0, 0, 0, 0.87);
+
+            .form-top {
+                background: #ffffff;
+                padding: 6vh;
+                border-radius: 10px 10px 0px 0px;
+
+                .first-row {
+                    letter-spacing: 2px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    .price-container-desktop {
+                        display: flex;
+                        align-items: center;
+
+                        .price-desktop {
+                            color: black;
+                            font-weight: 800;
+                            font-size: 3vw;
+                        }
+                    }
+
+                }
+
+                .second-row {
+                    @import 'slider';
+                    padding: 40px 0px;
+
+                    .price-container-mobile {
+                        display: flex;
+                        align-items: center;
+                        visibility: none;
+                        display: none;
+
+                        .price-mobile {
+                            color: black;
+                            font-weight: 800;
+                            font-size: 3vw;
+                        }
+                    }
+
+                }
+
+                .third-row {
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    @import 'switch';
+
+                    &>span {
+                        margin-right: 15px;
+                    }
+
+                    .discount,
+                    .discount-mobile {
+                        font-size: 10px;
+                        color: hsl(15, 100%, 70%);
+                        border-radius: 30px;
+                        font-weight: 800;
+                        background: hsl(14, 92%, 95%);
+                        padding: 5px 8px;
+                        text-align: center;
+                    }
+
+                    .discount-mobile {
+                        display: none;
+                    }
+                }
+            }
+
+            .form-bottom {
+                background: #ffffff;
+                padding: 6vh;
+                margin-top: 2px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                border-radius: 0px 0px 10px 10px;
+
+                button {
+                    color: hsl(230, 100%, 99%);
+                    padding: 15px;
+                    font-size: 1.6vh;
+                    font-weight: 600;
+                    border-radius: 30px;
+                    width: 200px;
+                    background: hsl(227, 35%, 25%);
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            ul {
+                list-style-image: url(../images/icon-check.svg);
+
+                li:nth-of-type(2) {
+                    padding: 5px 0px;
+                }
+            }
+        }
+    }
+}
+
+.attribution {
+    color: #ffffff;
+    font-size: 11px;
+    text-align: center;
+    z-index: 1;
+
+    a {
+        color: hsl(228, 45%, 44%);
+    }
+}
+
+@import 'media';

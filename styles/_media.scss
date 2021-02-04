@@ -1,0 +1,116 @@
+@media screen and (max-width: 1440px) {
+    .container {
+        width: 100vw;
+        height: 100vh;
+
+        .content {
+            height: 100vh;
+            width: 100vw;
+
+            .form-container {
+                width: 70%;
+
+                .form-top {
+                    .first-row {
+                        .price-container-desktop {
+                            .price-desktop {
+                                font-size: 4.5vh;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .attribution {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 730px) {
+    .container {
+        .content {
+            .form-container {
+                width: 90%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .container {
+        .content {
+
+            .header {
+                h1 {
+                    font-size: 3vh;
+                }
+
+                h4 {
+                    margin-top: 2vh;
+                    font-size: 2vh;
+                }
+            }
+
+            .form-container {
+                width: 90%;
+
+                .form-top {
+                    padding: 3vh;
+
+                    .first-row {
+                        flex-direction: column;
+                        font-size: 3vw;
+
+                        .price-container-desktop {
+                            display: none;
+                            visibility: none;
+                        }
+                    }
+
+                    .second-row {
+                        padding: 5vw 0px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        .price-container-mobile {
+                            margin-top: 3vh;
+                            visibility: visible;
+                            display: flex;
+                            align-items: center;
+                        }
+                    }
+
+                    .third-row {
+                        font-size: 3vw;
+
+                        &>span {
+                            margin-right: 3vw;
+                        }
+
+                        .discount {
+                            display: none;
+                        }
+
+                        .discount-mobile {
+                            display: block;
+                        }
+                    }
+                }
+
+                .form-bottom {
+                    text-align: center;
+                    flex-direction: column;
+                    padding: 3vh;
+
+                    button {
+                        margin-top: 3vh;
+                    }
+                }
+            }
+        }
+    }
+}
